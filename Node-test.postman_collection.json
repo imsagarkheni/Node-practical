@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "32cd7e57-123d-462b-a8f4-ab655d4f417b",
+		"name": "Node-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21952677"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\":\"test2\",\r\n    \"userName\":\"test2\",\r\n    \"contactNo\": \"7777777777\",\r\n    \"countryCode\": \"+91\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/apis/v1/register/sendotp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"v1",
+						"register",
+						"sendotp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify OTP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb250YWN0X25vIjoiKzkxNzc3Nzc3Nzc3NyIsImlhdCI6MTY4MTQwMDcwN30.o1DkBu8HkorNNR1W50qyp-LxI-IHc_7RnzKYVTtMsQI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"otp\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/apis/v1/register/verifyotp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"v1",
+						"register",
+						"verifyotp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Profile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2NDM4MjJkOWEwMzc3NDgyMTEyYTYwMjIiLCJpYXQiOjE2ODE0MDA3NzJ9.GE2M5YkCjMQIW6c04wPKywI8S2J_U5f9KABG_fZi-1s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"demo2\",\r\n    \"userName\": \"demo2\",\r\n    \"contact_no\": \"7894561230\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/apis/v1/profile/setprofile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"v1",
+						"profile",
+						"setprofile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2NDM4MjJkOWEwMzc3NDgyMTEyYTYwMjIiLCJpYXQiOjE2ODE0MDA3NzJ9.GE2M5YkCjMQIW6c04wPKywI8S2J_U5f9KABG_fZi-1s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/apis/v1/profile/getprofile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"v1",
+						"profile",
+						"getprofile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Expense",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2NDM4MjJkOWEwMzc3NDgyMTEyYTYwMjIiLCJpYXQiOjE2ODE0MDA3NzJ9.GE2M5YkCjMQIW6c04wPKywI8S2J_U5f9KABG_fZi-1s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Ice Cream\",\r\n    \"amount\":\"20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/apis/v1/expense/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"v1",
+						"expense",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Expenses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/apis/v1/expense/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"v1",
+						"expense",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
